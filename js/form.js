@@ -7,6 +7,15 @@ botaoAdicionar.addEventListener("click", function (event) {
 
     var paciente = obtemPacienteDoFormulario(form);
 
+    if (!paciente.altura || !paciente.gordura || !paciente.nome || !paciente.peso) {
+    var validacao = document.querySelector("#MsgErro")
+    
+    validacao.textContent = "Erro: TODOS OS CAMPOS DEVEM SER PREENCHIDOS!";
+
+    return;
+        
+    }
+
     var pacienteTr = montaTr(paciente);
 
     var tabela = document.querySelector("#tabela-pacientes");
@@ -44,4 +53,5 @@ function montaTr(paciente) {
     pacienteTr.appendChild(montaTd(paciente.imc));
 
     return pacienteTr;
-}   
+}
+ 
