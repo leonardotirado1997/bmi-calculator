@@ -30,6 +30,9 @@ botaoAdicionar.addEventListener("click", function (event) {
     tabela.appendChild(pacienteTr);
 
     form.reset();
+
+    var msgsErro = document.querySelector("#MsgErro");
+    msgsErro.innerHTML = "";
 })
 
 function obtemPacienteDoFormulario(form) {
